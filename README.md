@@ -28,7 +28,8 @@ This project demonstrates **TypeScript-like typing in plain JavaScript** using *
 
 ## Install
 
-This simple project runs without dependencies, however node types can be installed with:
+This simple project runs without dependencies, emulating NodeJS types in `globals.d.ts`,
+however `@types/node` can be installed for full coverage:
 ```bash
 npm i --save-dev @types/node
 ```
@@ -39,7 +40,7 @@ npm i --save-dev @types/node
 npm start
 ```
 
-This runs the runtime code using Node (no compilation).
+This runs the runtime code using Node (no compilation), and starting a server in `http:localhost:3000`.
 
 ---
 
@@ -73,16 +74,17 @@ This runs TypeScript’s checker in JS mode:
 jsdoc-typing-demo/
   package.json
   tsconfig.json
+  globals.d.ts
   README.md
+  LICENSE
   src/
     types.js
     server.js
     view/
       types.js
-      math.js
-      index.html.js
-      index.html
+      client.js
       styles.css
+      index.html
 ```
 
 ---
