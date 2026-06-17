@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ESNext",
+    "allowJs": true,
+    "maxNodeModuleJsDepth": 2,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationMap": true,
+    "checkJs": true,
+    "sourceMap": false,
+    "composite": false,
+    "strict": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "files": ["globals.d.ts"],
+  "include": ["src/**/*.js"]
+}
