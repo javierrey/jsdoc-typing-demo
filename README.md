@@ -40,7 +40,7 @@ npm i --save-dev @types/node
 npm start
 ```
 
-This runs the runtime code using Node (no compilation), and starting a server in `http:localhost:3000`.
+This runs the runtime code using Node (no compilation), and starting a server in `http://localhost:3000`.
 
 ---
 
