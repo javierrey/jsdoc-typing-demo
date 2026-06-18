@@ -32,8 +32,12 @@ const contentTypes = {
   '.svg': 'image/svg+xml',
   '.jpg': 'image/jpeg',
   '.png': 'image/png',
-  '.mp3': 'audio/mpeg',
+  '.gif': 'image/gif',
+  '.woff2': 'font/woff2',
+  '.mp3': 'audio/mp3',
+  '.wav': 'audio/x-wav',
   '.mp4': 'video/mp4',
+  '.mov': 'video/mp4',
 };
 
 /** @param {string} urlPath */
