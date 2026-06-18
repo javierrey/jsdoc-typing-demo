@@ -26,6 +26,8 @@ const contentTypes = {
   '.js': 'text/javascript; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
   '.md': 'text/markdown; charset=utf-8',
+  '.txt': 'text/plain; charset=utf-8',
+  '.json': 'application/json',
   '.svg': 'image/svg+xml',
   '.jpg': 'image/jpeg',
   '.png': 'image/png',
