@@ -38,6 +38,8 @@ const contentTypes = {
   '.wav': 'audio/x-wav',
   '.mp4': 'video/mp4',
   '.mov': 'video/mp4',
+  '.vtt': 'text/vtt',
+  '.dae': 'model/vnd.collada+xml',
 };
 
 /** @param {string} urlPath */
