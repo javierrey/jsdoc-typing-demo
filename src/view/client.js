@@ -1,3 +1,6 @@
+// client.js
+// @ts-check
+
 /**
  * @typedef {import('./types.js').Config} Config;
  * @typedef {import('./types.js').Point2D} Point2D;
@@ -138,7 +141,7 @@ function render() {
 
   // Optionally show where to create “intentional mistakes”
   lines.push('');
-  lines.push('Tip: Uncomment the lines at the bottom of this file to see VS Code type errors.');
+  lines.push('Tip: Uncomment the lines at the bottom of this file to see IDE type errors.');
 
   const out = document.getElementById('out');
   if (out) out.textContent = lines.join('\n');
@@ -150,9 +153,7 @@ function render() {
   render();
 })();
 
-/**
- * --- Uncomment to see type errors in VS Code ---
- */
+/* Uncomment to see type errors in IDE: */
 
 // add('1', 2); // number expected
 // displayName(123); // string|null|undefined expected

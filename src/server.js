@@ -1,4 +1,4 @@
-// server.js (minimum)
+// server.js
 // @ts-check
 
 /**
@@ -20,7 +20,7 @@ const __dirname = path.dirname(__filename);
 const VIEW_DIR = path.join(__dirname, 'view');
 const PORT = 3000;
 
-/** @type StringRecord */
+/** @type {StringRecord} */
 const contentTypes = {
   '.html': 'text/html; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8',

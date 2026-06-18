@@ -3,6 +3,7 @@
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "target": "ESNext",
+    "lib": ["ESNext", "DOM", "WebWorker"],
     "allowJs": true,
     "maxNodeModuleJsDepth": 2,
     "declaration": true,
@@ -18,5 +19,12 @@
     "forceConsistentCasingInFileNames": true
   },
   "files": ["globals.d.ts"],
-  "include": ["src/**/*.js"]
+  "include": ["src/**/*.js"],
+  "exclude": [
+    "_exclude",
+    "node_modules",
+    "dist",
+    "generated",
+    "**/*.test.*"
+  ]
 }
