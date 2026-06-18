@@ -35,7 +35,7 @@ const contentTypes = {
   '.gif': 'image/gif',
   '.woff2': 'font/woff2',
   '.mp3': 'audio/mp3',
-  '.wav': 'audio/x-wav',
+  '.wav': 'audio/wav',
   '.mp4': 'video/mp4',
   '.mov': 'video/mp4',
   '.vtt': 'text/vtt',
