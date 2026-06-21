@@ -9,7 +9,7 @@
     "declaration": true,
     "emitDeclarationOnly": true,
     "declarationMap": true,
-    "checkJs": true,
+    "checkJs": false,
     "sourceMap": false,
     "composite": false,
     "strict": true,
@@ -24,7 +24,7 @@
     "_exclude",
     "node_modules",
     "dist",
-    "generated",
+    "gen",
     "**/*.test.*"
   ]
 }

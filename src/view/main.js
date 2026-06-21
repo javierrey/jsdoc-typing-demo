@@ -1,4 +1,4 @@
-// client.js
+// view/main.js
 // @ts-check
 
 /**
@@ -7,6 +7,10 @@
  * @typedef {import('./types.js').Result<number>} ResultNumber;
  * @typedef {import('./types.js').User} User;
  */
+
+import {
+  ge, gt, qs, qa,
+} from './utils.js';
 
 /**
  * 1) Function signature typing
@@ -141,20 +145,19 @@ function render() {
 
   // Optionally show where to create “intentional mistakes”
   lines.push('');
-  lines.push('Tip: Uncomment the lines at the bottom of this file to see IDE type errors.');
+  lines.push('Tip: Uncomment the lines at the bottom of this script to see IDE type errors.');
 
-  const out = document.getElementById('out');
-  if (out) out.textContent = lines.join('\n');
+  const outPre = ge('outPre');
+  if (outPre) outPre.textContent = lines.join('\n');
 }
 
-
+/* Start client JS runtime when document is ready. */
 (function ready(...args) {
   if (!document.body) return setTimeout(ready, 50, ...args);
   render();
 })();
 
 /* Uncomment to see type errors in IDE: */
-
 // add('1', 2); // number expected
 // displayName(123); // string|null|undefined expected
 // describeConfig({}); // missing required port

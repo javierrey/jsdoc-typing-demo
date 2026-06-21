@@ -1,43 +1,26 @@
 // view/types.js (Browser)
+// @ts-check
 
-/* Core */
-
-/**
- * Basic object types for generic data structures.
- * @typedef {Record<string, any>} PlainObject
- * @typedef {Record<number | string, any>} ArrayObject
- * @typedef {{ (...args: any[]): any, [key: string]: any }} FunctionObject
- */
+/* Core: */
 
 /**
- * A plain serialisable JSON value.
- * @typedef {string | number | boolean | null | JsonObject | JsonArray} JsonValue
+ * @typedef {import('./core/types.js').PlainObject} PlainObject;
+ * @typedef {import('./core/types.js').ArrayObject} ArrayObject;
+ * @typedef {import('./core/types.js').FunctionObject} FunctionObject;
+ * @typedef {import('./core/types.js').JsonValue} JsonValue;
+ * @typedef {import('./core/types.js').JsonObject} JsonObject;
+ * @typedef {import('./core/types.js').JsonArray} JsonArray;
+ * @typedef {import('./core/types.js').EventHandler} EventHandler;
  */
 
-/**
- * A JSON object (string-keyed, JsonValue values).
- * @typedef {{ [key: string]: JsonValue }} JsonObject
- */
-
-/**
- * A JSON array.
- * @typedef {JsonValue[]} JsonArray
- */
-
-/**
- * A generic event-handler callback.
- * @template {Event} [E=Event]
- * @typedef {(event: E) => void} EventHandler
- */
-
-/* Browser */
+/* View: */
 
 /**
  * A top-level browser global context — either the main thread Window or a Worker scope.
  * @typedef {Window & typeof globalThis | WorkerGlobalScope} GlobalContext
  */
 
-/* Custom */
+/* Custom: */
 
 /**
  * 1) Object shape typedef
@@ -84,6 +67,6 @@
  * @typedef {string | null | undefined} MaybeString
  */
 
-/* Module */
+/* * */
 
-export default undefined;
+// export default undefined; // module

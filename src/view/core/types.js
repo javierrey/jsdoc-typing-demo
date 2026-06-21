@@ -1,6 +1,7 @@
-// src/types.js (NodeJS)
+// core/types.js
+// @ts-check
 
-/* Core */
+/* Core: */
 
 /**
  * Basic object types for generic data structures.
@@ -30,21 +31,10 @@
  * @typedef {(event: E) => void} EventHandler
  */
 
-/* NodeJS */
+/* Custom: */
 
-/**
- * Basic NodeJS types for generic data structures.
- * @typedef {import('node:http').IncomingMessage} IncomingMessage
- * @typedef {import('node:http').ServerResponse} ServerResponse
- * @typedef {import('node:buffer').Buffer} NodeBuffer
- * @typedef {import('node:stream').Readable} ReadableStream
- * @typedef {import('node:stream').Writable} WritableStream
- * @typedef {NodeJS.ErrnoException} NodeErrnoException
- * @typedef {Record<string, string>} StringRecord
- */
 
-/* Custom */
 
-/* Module */
+/* * */
 
-export default undefined;
+// export default undefined; // module

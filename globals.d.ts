@@ -22,5 +22,5 @@ declare namespace NodeJS {
     code?: string;
     path?: string;
     syscall?: string;
-  }
+  };
 }
