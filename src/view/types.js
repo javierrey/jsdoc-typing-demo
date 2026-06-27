@@ -17,7 +17,7 @@
 
 /**
  * A top-level browser global context — either the main thread Window or a Worker scope.
- * @typedef {Window & typeof globalThis | WorkerGlobalScope} GlobalContext
+ * @typedef {typeof globalThis & Window | WorkerGlobalScope} GlobalContext
  */
 
 /* Custom: */
