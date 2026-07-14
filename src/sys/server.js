@@ -53,9 +53,8 @@ const safePathFromUrl = (urlPath, viewDir) => {
 }
 
 export const runServer = (port = PORT, view = VIEW_DIR) => {
-  const server = http.createServer(
-    /** @param {IncomingMessage} req @param {ServerResponse} res */
-    async (req, res) => {
+  /** @param {IncomingMessage} req @param {ServerResponse} res */
+  const listener = async (req, res) => {
       const url = req.url ? new URL(req.url, `http://${req.headers.host}`) : null;
       const pathname = url?.pathname ?? '/';
 
@@ -80,8 +79,9 @@ export const runServer = (port = PORT, view = VIEW_DIR) => {
         res.writeHead(404);
         res.end('Not found');
       }
-    },
-  );
+    };
+
+  const server = http.createServer(listener);
 
   server.listen(port, () => {
     console.log(`jsdoc-typing-demo server running at http://localhost:${port}`);
