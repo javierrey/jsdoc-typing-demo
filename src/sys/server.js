@@ -50,7 +50,7 @@ const safePathFromUrl = (urlPath, viewDir) => {
   const full = path.join(viewDir, normalized);
   if (!full.startsWith(viewDir)) return null;
   return full;
-}
+};
 
 export const runServer = (port = PORT, view = VIEW_DIR) => {
   /** @param {IncomingMessage} req @param {ServerResponse} res */
