@@ -42,5 +42,5 @@ See [STEPS.md](STEPS.md).
 
 ## References
 
-- This repo: https://github.com/javierrey/jsdoc-typing-demo
-- JSDoc: https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html
+- This repo: [https://github.com/javierrey/jsdoc-typing-demo](https://github.com/javierrey/jsdoc-typing-demo)
+- JSDoc: [https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html)
