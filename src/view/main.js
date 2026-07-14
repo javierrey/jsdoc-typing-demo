@@ -23,7 +23,13 @@ export function add(a, b) {
 }
 
 /**
- * 2) Unions + nullability
+ * 2) Object shape typing via typedef
+ * @type {User}
+ */
+export const user = { id: 'u1', name: 'Ada', age: 36 };
+
+/**
+ * 3) Unions + nullability
  * @param {string | null | undefined} name
  * @returns {string}
  */
@@ -32,7 +38,7 @@ export function displayName(name) {
 }
 
 /**
- * 3) Optional properties via typedef
+ * 4) Optional properties via typedef
  * @param {Config} config
  * @returns {string}
  */
@@ -43,7 +49,7 @@ export function describeConfig(config) {
 }
 
 /**
- * 4) Tuple typing
+ * 5) Tuple typing
  * @param {Point2D} point
  * @returns {number}
  */
@@ -53,7 +59,7 @@ export function distanceToOrigin(point) {
 }
 
 /**
- * 5) Generics (via template tag)
+ * 6) Generics (via template tag)
  * @template T
  * @param {T} value
  * @returns {T}
@@ -63,7 +69,7 @@ export function identity(value) {
 }
 
 /**
- * 6) Overload-like example (JSDoc overloads supported by TS checking).
+ * 7) Overload-like example (JSDoc overloads supported by TS checking).
  * @overload
  * @param {number} x
  * @returns {string}
@@ -80,7 +86,16 @@ export function toString(x) {
 }
 
 /**
- * 7) Result<T> modeling with unions + narrowing
+ * 8) Async typing with Promises
+ * @param {number} ms
+ * @returns {Promise<void>}
+ */
+export function wait(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+/**
+ * 9) Result<T> modeling with unions + narrowing
  * @param {number} n
  * @returns {ResultNumber}
  */
@@ -92,31 +107,19 @@ export function parsePositiveInt(n) {
 }
 
 /**
- * 8) Async typing with Promises
- * @param {number} ms
- * @returns {Promise<void>}
- */
-export function wait(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-/**
  * Renders results into the page.
  */
 function render() {
-  /** @type {User} */
-  const user = { id: 'u1', name: 'Ada', age: 36 };
-
   const lines = [];
 
   // 1) add
   lines.push(`add(user.age, 1) = ${add(user.age, 1)}`);
 
-  // 2) displayName
+  // 3) displayName
   lines.push(`displayName(user.name) = ${displayName(user.name)}`);
   lines.push(`displayName(undefined) = ${displayName(undefined)}`);
 
-  // 3) optional properties
+  // 4) optional properties
   lines.push(
     `describeConfig({ port: 8080 }) = ${describeConfig({ port: 8080 })}`
   );
@@ -127,17 +130,17 @@ function render() {
     })}`
   );
 
-  // 4) tuple
+  // 5) tuple
   lines.push(`distanceToOrigin([3, 4]) = ${distanceToOrigin([3, 4])}`);
 
-  // 5) generics
+  // 6) generics
   lines.push(`identity({ a: 1 }).a = ${identity({ a: 1 }).a}`);
 
-  // 6) overload-like toString
+  // 7) overload-like toString
   lines.push(`toString(123) = ${toString(123)}`);
   lines.push(`toString('abc') = ${toString('abc')}`);
 
-  // 7) Result<T> narrowing
+  // 9) Result<T> narrowing
   const r1 = parsePositiveInt(5);
   if (r1.kind === 'ok') {
     lines.push(`parsePositiveInt(5): ok value=${r1.value}`);
