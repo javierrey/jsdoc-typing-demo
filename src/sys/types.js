@@ -22,7 +22,6 @@
  * @typedef {import('node:buffer').Buffer} NodeBuffer
  * @typedef {import('node:stream').Readable} ReadableStream
  * @typedef {import('node:stream').Writable} WritableStream
- * @typedef {NodeJS.ErrnoException} NodeErrnoException
  */
 
 /* Custom: */

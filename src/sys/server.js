@@ -5,8 +5,6 @@
  * @typedef {import('./types.js').IncomingMessage} IncomingMessage
  * @typedef {import('./types.js').ServerResponse} ServerResponse
  * @typedef {import('./types.js').NodeBuffer} NodeBuffer
- * @typedef {import('./types.js').NodeErrnoException} NodeErrnoException
- * @typedef {import('./types.js').StringRecord} StringRecord
  */
 
 import http from 'node:http';
@@ -14,13 +12,15 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+const fsP = fs.promises; fs.readFile('');
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const VIEW_DIR = String(path.join(__dirname, '../view'));
 const PORT = 3000;
 
-/** @type {StringRecord} */
+/** @type {Record<string, string>} */
 const contentTypes = {
   '.html': 'text/html; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8',
@@ -28,6 +28,7 @@ const contentTypes = {
   '.xml': 'text/xml; charset=utf-8',
   '.md': 'text/markdown; charset=utf-8',
   '.txt': 'text/plain; charset=utf-8',
+  '.csv': 'text/csv; charset=utf-8',
   '.json': 'application/json',
   '.svg': 'image/svg+xml',
   '.jpg': 'image/jpeg',
@@ -54,7 +55,7 @@ const safePathFromUrl = (urlPath, viewDir) => {
 export const runServer = (port = PORT, view = VIEW_DIR) => {
   const server = http.createServer(
     /** @param {IncomingMessage} req @param {ServerResponse} res */
-    (req, res) => {
+    async (req, res) => {
       const url = req.url ? new URL(req.url, `http://${req.headers.host}`) : null;
       const pathname = url?.pathname ?? '/';
 
@@ -69,21 +70,16 @@ export const runServer = (port = PORT, view = VIEW_DIR) => {
         return;
       }
 
-      fs.readFile(
-        targetPath,
-        /** @param {NodeErrnoException | null} err @param {NodeBuffer} data */
-        (err, data) => {
-          if (err) {
-            res.writeHead(404);
-            res.end('Not found');
-            return;
-          }
-          const ext = path.extname(targetPath);
-          const contentType = contentTypes[ext] ?? 'application/octet-stream';
-          res.writeHead(200, { 'Content-Type': contentType });
-          res.end(data);
-        },
-      );
+      try {
+        const data = await fsP.readFile(targetPath);
+        const ext = path.extname(targetPath);
+        const contentType = contentTypes[ext] ?? 'application/octet-stream';
+        res.writeHead(200, { 'Content-Type': contentType });
+        res.end(data);
+      } catch (err) {
+        res.writeHead(404);
+        res.end('Not found');
+      }
     },
   );
 

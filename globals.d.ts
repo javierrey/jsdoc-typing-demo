@@ -15,12 +15,3 @@ declare module "node:stream" {
   export import Readable = stream.Readable;
   export import Writable = stream.Writable;
 }
-
-declare namespace NodeJS {
-  interface ErrnoException extends Error {
-    errno?: number;
-    code?: string;
-    path?: string;
-    syscall?: string;
-  };
-}
