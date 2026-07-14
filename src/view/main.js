@@ -92,6 +92,15 @@ export function parsePositiveInt(n) {
 }
 
 /**
+ * 8) Async typing with Promises
+ * @param {number} ms
+ * @returns {Promise<void>}
+ */
+export function wait(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+/**
  * Renders results into the page.
  */
 function render() {
@@ -143,6 +152,12 @@ function render() {
     lines.push(`parsePositiveInt(-2): error message=${r2.message}`);
   }
 
+  // 8) async Promises
+  wait(0).then(() => {
+    const outPre = ge('outPre');
+    if (outPre) outPre.textContent += '\nwait(0) resolved';
+  });
+
   // Optionally show where to create “intentional mistakes”
   lines.push('');
   lines.push('Tip: Uncomment the lines at the bottom of this script to see IDE type errors.');
@@ -164,3 +179,4 @@ function render() {
 // distanceToOrigin([1, 2, 3]); // tuple expects exactly [number, number]
 // identity(123).toUpperCase(); // number doesn't have toUpperCase
 // parsePositiveInt('5'); // number expected
+// wait('100'); // number expected
