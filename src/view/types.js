@@ -19,6 +19,11 @@
  * @typedef {typeof globalThis & Window | WorkerGlobalScope} GlobalContext
  */
 
+/**
+ * A generic form control element.
+ * @typedef {HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement | HTMLButtonElement} FormControlElement
+ */
+
 /* Custom: */
 
 /**
