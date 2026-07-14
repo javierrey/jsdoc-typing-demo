@@ -25,12 +25,6 @@
  * @typedef {JsonValue[]} JsonArray
  */
 
-/**
- * A generic event-handler callback.
- * @template {Event} [E=Event]
- * @typedef {(event: E) => void} EventHandler
- */
-
 /* Custom: */
 
 

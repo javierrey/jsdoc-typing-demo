@@ -10,7 +10,6 @@
  * @typedef {import('./core/types.js').JsonValue} JsonValue;
  * @typedef {import('./core/types.js').JsonObject} JsonObject;
  * @typedef {import('./core/types.js').JsonArray} JsonArray;
- * @typedef {import('./core/types.js').EventHandler} EventHandler;
  */
 
 /* View: */
