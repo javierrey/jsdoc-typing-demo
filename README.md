@@ -1,6 +1,6 @@
 # JSDOC types without building
 
-This project demonstrates **TypeScript-like typing for plain JavaScript** using **JSDoc**—with **no TypeScript build step**.
+This project demonstrates **TypeScript-like typing for plain JavaScript** in the editor, using **JSDoc**—with **no TypeScript build step**.
 
 ## Run
 
@@ -9,6 +9,8 @@ npm start
 ```
 
 - `npm start` launches the **Node.js runtime**, including an **HTTP server on port 3000**.
+
+## Source content
 
 - The system `index.js` starts the runtime and server:
   - `src/sys/index.js` (NodeJS system boot script)
