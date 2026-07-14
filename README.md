@@ -2,6 +2,8 @@
 
 This project demonstrates **TypeScript-like typing for plain JavaScript** in the editor, using **JSDoc**—with **no TypeScript build step**.
 
+The typical use case scenario for this template repo would be testing a Javascript feature implementation, where the runtime code is the source code, using the default type validation provided by the IDE (VSCode, Idea, etc).
+
 ## Run
 
 ```bash
